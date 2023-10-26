@@ -24,15 +24,16 @@ const recipes = [
     `,
     recipe: `
       1.) Wash the rice and soak it in water for 30 minutes. Drain and set aside.
-       2.) In a large, heavy-bottomed pot, heat the ghee or oil over medium heat. Add the sliced onions and sauté until they turn golden brown. Remove half of the fried onions and set them aside for garnishing.
-      3.) Add the chicken pieces to the pot and sauté until they turn white. Add the chopped tomatoes, green chilies, biryani masala, turmeric, and red chili powder. Cook until the tomatoes soften.
-      4.) Add the yogurt and sauté for a few minutes until the chicken is partially cooked and the mixture thickens.
-      5.) Layer the soaked and drained rice on top of the chicken mixture. Spread half of the chopped mint and coriander leaves over the rice.
-      6.) Add enough water to cover the rice (approximately 2 cups). Season with salt. Bring to a boil, then reduce the heat to low, cover with a tight-fitting lid, and simmer for 20-25 minutes or until the rice is cooked and the chicken is tender.
-      7.) Once cooked, gently fluff the biryani with a fork, mixing the chicken and rice together.
-      8.) Garnish with the remaining fried onions, mint, and coriander leaves.
-      9.) Cover the pot and let it sit for 10-15 minutes to allow the flavors to meld.
-      10.) Serve the chicken biryani hot with raita or a side salad.}
+      2.) In a large, heavy-bottomed pot, heat the ghee or oil over medium heat. 
+      3.)Add the sliced onions and sauté until they turn golden brown. Remove half of the fried onions and set them aside for garnishing.
+      4.) Add the chicken pieces to the pot and sauté until they turn white. Add the chopped tomatoes, green chilies, biryani masala, turmeric, and red chili powder. Cook until the tomatoes soften.
+      5.) Add the yogurt and sauté for a few minutes until the chicken is partially cooked and the mixture thickens.
+      6.) Layer the soaked and drained rice on top of the chicken mixture. Spread half of the chopped mint and coriander leaves over the rice.
+      7.) Add enough water to cover the rice (approximately 2 cups). Season with salt. Bring to a boil, then reduce the heat to low, cover with a tight-fitting lid, and simmer for 20-25 minutes or until the rice is cooked and the chicken is tender.
+      8.) Once cooked, gently fluff the biryani with a fork, mixing the chicken and rice together.
+      9.) Garnish with the remaining fried onions, mint, and coriander leaves.
+      10.) Cover the pot and let it sit for 10-15 minutes to allow the flavors to meld.
+      11.) Serve the chicken biryani hot with raita or a side salad.}
     `
   },
 {name:"Rogan Josh",
@@ -275,10 +276,10 @@ function ShowRecipe({selectedRecipe,onEdit}){
   };
   return(
     <div className="recipe">
-      <h2>Follow the below instructions:</h2>
+      <h2>Follow the below instructions to prepare {selectedRecipe.name}</h2>
       {isEditing ? (
         <div>
-          <textarea rows="20" cols="80"
+          <textarea rows="30" cols="80"
             type="text"
             value={editedRecipe ? editedRecipe.recipe : ''}
             onChange={(e) => setEditedRecipe({ recipe: e.target.value })}
@@ -321,7 +322,7 @@ function ShowIngredients({selectedIngredient,onEdit}){
   };
   return(
     <div className="recipe">
-      <h2>Here are the all ingredients needed:</h2>
+      <h2>Here are the all ingredients needed for making {selectedIngredient.name}</h2>
       {isEditing ? (
         <div>
           <textarea rows="20" cols="80"
